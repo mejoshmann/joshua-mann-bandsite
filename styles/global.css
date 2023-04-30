@@ -1,0 +1,545 @@
+@import url(./partials/partials.scss);
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "avenir";
+}
+
+/* Navigation */
+.navigation {
+  background: #323232;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+  }
+}
+
+.nav__logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  padding: 1rem 0 0 0;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 2rem;
+    padding: 1rem 2.5rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .nav__logo {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem 0 7rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-items {
+    margin: 0 2.5rem;
+  }
+}
+
+.nav-item {
+  display: inline-block;
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem 0.5rem 1.2rem 0;
+  width: auto;
+}
+
+.nav-item__link {
+  text-decoration: none;
+  color: #fefefe;
+  font-size: 1.7rem;
+  padding: 1rem 7rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-item__link {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .nav-item__link {
+    font-size: 1rem;
+  }
+}
+
+.nav-item__link:hover {
+  animation: fill 1s forwards;
+}
+
+.nav-item__link--active {
+  font-weight: 500;
+  color: #fff;
+  border-bottom: 5px solid #fff;
+}
+@media screen and (min-width: 768px) {
+  .nav-item__link--active {
+    margin-right: 4rem;
+  }
+}
+
+/* Hero Image */
+.hero-image {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 38vh;
+  filter: grayscale(60%);
+}
+@media screen and (min-width: 768px) {
+  .hero-image {
+    height: 47vh;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero-image {
+    height: 50vh;
+  }
+}
+
+.hero-heading {
+  font-size: 3rem;
+  color: #fff;
+  position: relative;
+  top: 12rem;
+  left: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .hero-heading {
+    left: 2.5rem;
+    top: 21rem;
+    font-size: 5rem;
+    font-weight: 600;
+    top: 18rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero-heading {
+    font-size: 3.5rem;
+    margin-left: 4.5rem;
+  }
+}
+
+/* Main Section, Band Biography Styling */
+.band-bio {
+  padding: 2rem;
+}
+
+.band-bio__image {
+  background-image: url(../assets/images/band.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25rem;
+}
+
+.band-bio__heading {
+  padding: 0.25rem 0 1.5rem 0.25rem;
+  font-size: 3.5rem;
+}
+@media screen and (min-width: 768px) {
+  .band-bio__heading {
+    font-size: 3rem;
+    font-weight: 500;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__heading {
+    font-size: 2.2rem;
+    margin-left: 4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .band-bio__container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__container {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+.band-bio__blurb-heading {
+  padding: 1.5rem 0;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .band-bio__blurb-heading {
+    padding: 2rem 0 0.5rem 0;
+    font-size: 1.88rem;
+    line-height: 1.3;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__blurb-heading {
+    font-size: 1.3rem;
+    padding-right: 25%;
+  }
+}
+
+.band-bio__blurb {
+  padding-bottom: 1rem;
+  font-size: 2.1rem;
+  padding-bottom: 2.6rem;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .band-bio__blurb {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__blurb {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .band-bio__bio {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .band-bio__divider {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.band-bio__bio-heading {
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__bio-heading {
+    font-size: 1.5rem;
+  }
+}
+
+.band-bio__paragraph {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .band-bio__paragraph {
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-bio__paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+.first-paragraph {
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Band Image Section */
+.band-images {
+  background-color: #fafafa;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .band-images {
+    padding: 0 0 2rem 0;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-images {
+    padding: 0 4rem;
+  }
+}
+
+.band-images__heading {
+  padding: 1rem 1rem 0 0;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .band-images__heading {
+    font-size: 3.2rem;
+    font-weight: 600;
+    padding: 3rem 0 1rem 3rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-images__heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .band-images__container {
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-images__container {
+    padding-bottom: 1rem;
+  }
+}
+
+.band-images__images {
+  width: 100%;
+  padding-top: 2rem;
+  filter: grayscale(60%);
+}
+@media screen and (min-width: 768px) {
+  .band-images__images {
+    max-width: 32%;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .band-images__images {
+    padding: 0.5rem;
+  }
+}
+
+.band-images__images:hover {
+  filter: grayscale(0);
+}
+
+/* Footer Section */
+.footer {
+  background-color: #323232;
+  color: #fff;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer {
+    padding: 0 6.5rem;
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-container {
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container__tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.footer-heading {
+  font-size: 3.5rem;
+  font-weight: 500;
+  padding-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-heading {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-heading {
+    font-size: 2.3rem;
+    display: inline-block;
+    padding-right: 2rem;
+  }
+}
+
+.footer__bandsite-logo--tablet {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .footer__bandsite-logo--tablet {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer__bandsite-logo--tablet {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-socials__container {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+.footer-socials {
+  height: 3.2rem;
+  display: inline-block;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .footer-socials {
+    height: 2.5rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-socials {
+    height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-info__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-info__container {
+    display: inline-block;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-info__container--tablet {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-info__container--tablet {
+    margin-right: 6rem;
+  }
+}
+
+.footer-info__agent {
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-info__agent {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-info__agent {
+    font-size: 0.85rem;
+    padding-top: 1.5rem;
+  }
+}
+
+.footer-info__copy,
+.footer-info__email {
+  font-size: 1.85rem;
+  padding: 2rem 0;
+  color: #fff;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .footer-info__copy,
+  .footer-info__email {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-info__copy,
+  .footer-info__email {
+    font-size: 0.81rem;
+    padding: 1rem 0;
+  }
+}
+
+.footer__bandsite-logo {
+  font-size: 3.5rem;
+  font-weight: 400;
+  padding-top: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__bandsite-logo {
+    display: none;
+  }
+}
+
+.footer-info__copyright {
+  font-size: 1.7rem;
+  font-weight: 200;
+  padding-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-info__copyright {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer-info__copyright {
+    font-size: 0.81rem;
+    padding: 2rem 0;
+  }
+}/*# sourceMappingURL=global.css.map */

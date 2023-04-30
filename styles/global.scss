@@ -1,0 +1,522 @@
+@use "./partials/variables" as *;
+@use "./partials/partials" as *;
+@import url(./partials/partials.scss);
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "avenir";
+}
+
+/* Navigation */
+.navigation {
+    background: #323232;
+}
+
+.nav__container {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: baseline;
+    }
+
+   
+}
+
+.nav__logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    display: block;
+    padding: 1rem 0 0 0 ;
+
+    @include tablet {
+        font-size: 2rem;
+        padding: 1rem 2.5rem;
+    }
+
+    @include desktop {
+        font-size: 1.5rem;
+        padding: 1.5rem 1rem 0 7rem;
+    }
+    
+}
+
+.nav-items {
+
+    @include tablet {
+        margin: 0 2.5rem;
+    }
+}
+
+.nav-item {
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem .5rem 1.2rem 0;
+    width: auto;
+
+}
+
+.nav-item__link {
+    text-decoration: none;
+    color: #fefefe;
+    font-size: 1.7rem;
+    padding: 1rem 7rem;
+    
+    @include tablet {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    @include desktop {
+        font-size: 1rem;
+        
+    }
+}
+
+.nav-item__link:hover {
+    animation: fill 1s forwards;
+}
+
+.nav-item__link--active {
+    font-weight: 500;
+    color: #fff;
+    border-bottom: 5px solid #fff;
+    
+    @include tablet {
+        margin-right: 4rem;
+    }
+}
+
+
+/* Hero Image */
+.hero-image {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 38vh;
+    filter: grayscale(60%);
+
+   
+    @include tablet {
+      height: 47vh;
+    }
+    @include desktop {
+        height: 50vh;
+    }
+}
+
+.hero-heading {
+    font-size: 3rem;
+    color: #fff;
+    position: relative;
+    top: 12rem;
+    left: 2rem;
+    
+    @include tablet {
+        left: 2.5rem;
+        top: 21rem;
+        font-size: 5rem;
+        font-weight: 600;
+        top: 18rem;
+    }
+
+    @include desktop {
+        font-size: 3.5rem;
+        margin-left: 4.5rem;
+    }
+
+}
+
+
+/* Main Section, Band Biography Styling */
+.band-bio {
+    padding: 2rem;
+}
+
+.band-bio__image {
+    background-image: url(../assets/images/band.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25rem;
+}
+
+.band-bio__heading {
+    padding: .25rem 0 1.5rem .25rem ;
+    font-size: 3.5rem;
+
+    @include tablet {
+        font-size: 3rem;
+        font-weight: 500;
+        padding: 1.5rem;
+    }
+
+    @include desktop {
+        font-size: 2.2rem;
+        margin-left: 4rem;
+    }
+}
+
+.band-bio__container {
+    @include tablet {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    @include desktop {
+        width: 70%;
+        margin-left: 15%;
+    }
+}
+
+.band-bio__blurb-heading {
+    padding: 1.5rem 0;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 2rem;
+
+    @include tablet {
+        padding: 2rem 0 .5rem 0;
+        font-size: 1.88rem;
+        line-height: 1.3;
+    }
+
+    @include desktop {
+        font-size: 1.3rem;
+        padding-right: 25%;
+    }
+}
+
+.band-bio__blurb {
+    padding-bottom: 1rem;
+    font-size: 2.1rem;
+    padding-bottom: 2.6rem;
+    font-weight: 500;
+
+    @include tablet {
+        font-size: 1.3rem;
+    }
+
+    @include desktop {
+        font-size: 1rem;
+    }
+}
+
+.band-bio__bio {
+    @include tablet {
+        margin-top: 1.5rem;
+    }
+}
+
+.band-bio__divider {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        
+    }
+}
+
+
+.band-bio__bio-heading {
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    @include desktop {
+        font-size: 1.5rem;
+    }
+}
+
+.band-bio__paragraph {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    
+    @include tablet {
+        margin-right: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    @include desktop {
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+}
+
+.first-paragraph {
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+/* Band Image Section */
+.band-images {
+
+    background-color: #fafafa;
+    padding: 2rem;
+
+    @include tablet {
+        padding: 0 0 2rem 0;
+    }
+    @include desktop {
+        padding: 0 4rem;
+    }
+}
+
+
+.band-images__heading {
+    padding: 1rem 1rem 0 0;
+    font-size: 3.6rem;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 3.2rem;
+        font-weight: 600;
+        padding: 3rem 0 1rem 3rem;
+       }
+
+       @include desktop {
+        font-size: 2.2rem;
+       }
+   
+
+}
+
+.band-images__container {
+    
+
+    @include tablet {
+        text-align: center;
+        padding: 0 1rem
+    }
+    @include desktop {
+        padding-bottom: 1rem;
+    }
+  
+}
+
+.band-images__images {
+    width: 100%;
+    padding-top: 2rem;
+    filter: grayscale(60%);
+
+    @include tablet {
+        max-width: 32%;
+        padding: 1rem;
+
+    }
+
+    @include desktop {
+        padding: .5rem;
+    }
+    
+}
+
+.band-images__images:hover {
+    filter: grayscale(0);
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #323232;
+    color: #fff;
+    padding: 1.5rem;
+
+    @include tablet {
+        padding: 2rem;
+    }
+
+    @include desktop {
+        padding: 0 6.5rem;
+    }
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        padding: 0 1rem;
+    }
+    @include desktop {
+        padding: 1rem 0;
+    }
+   
+}
+
+// used for tablet sizing
+.footer-container__tablet {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+  
+}
+
+.footer-heading {
+    font-size: 3.5rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+
+    @include tablet {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+
+  @include desktop {
+    font-size: 2.3rem;
+    display: inline-block;
+    padding-right: 2rem;
+  }
+}
+
+
+
+
+// used to hide bandsite logo at bottom for larger sizing
+.footer__bandsite-logo--tablet {
+    display: none;
+
+    @include tablet {
+        display: inline-block;
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    @include desktop {
+        font-size: 1.5rem;
+    }
+}
+
+.footer-socials__container {
+    @include tablet {
+        display: inline-block;
+        text-align: left;
+    }
+
+   
+}
+
+.footer-socials {
+    height: 3.2rem;
+    display: inline-block;
+    margin: 0;
+
+    @include tablet {
+        height: 2.5rem;
+        margin-right: 2rem;
+    }
+
+    @include desktop {
+        height: 1.5rem;
+    }
+}
+
+.footer-info__container {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 0;
+
+    }
+
+    @include desktop {
+        display: inline-block; 
+        padding: 0;
+    }
+}
+
+// used to display in a row on larger sizes
+.footer-info__container--tablet {
+    @include tablet {
+        display: inline-block;
+    }
+
+    @include desktop {
+        margin-right: 6rem;
+    }
+}
+
+
+
+.footer-info__agent {
+    font-size: 1.9rem;
+    font-weight: 500;
+    padding-top: 1rem;
+
+    @include tablet {
+        font-size: 1.2rem;
+    }
+
+    @include desktop {
+        font-size: .85rem;
+        padding-top: 1.5rem;
+        
+    }
+}
+
+.footer-info__copy,
+.footer-info__email {
+    font-size: 1.85rem;
+    padding: 2rem 0;
+    color: #fff;
+    text-decoration: none;
+
+    @include tablet {
+        font-size: 1.2rem;
+    }
+
+    @include desktop {
+        font-size: .81rem;
+        padding: 1rem 0;
+        
+        
+    }
+}
+
+.footer__bandsite-logo {
+    font-size: 3.5rem;
+    font-weight: 400;
+    padding-top: 5rem;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.footer-info__copyright {
+    font-size: 1.7rem;
+    font-weight: 200;
+    padding-top: 1.5rem;
+
+    @include tablet {
+        font-size: 1.4rem;
+    }
+
+    @include desktop {
+        font-size: .81rem;
+        padding: 2rem 0; 
+    
+    }
+}
+
+
+
