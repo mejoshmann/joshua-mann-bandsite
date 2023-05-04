@@ -1,6 +1,6 @@
 @use "./partials/variables" as *;
 @use "./partials/partials" as *;
-@import url(./partials/partials.scss);
+// @use url(./partials/partials.scss);
 
 
 
@@ -15,29 +15,26 @@ body {
 }
 
 /* Navigation */
-.navigation {
+.nav {
     background: #323232;
-}
 
-.nav__container {
-    @include tablet {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: baseline;
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: baseline;
+        }
     }
 
-   
-}
-
-.nav__logo {
-    text-decoration: none;
+    &__logo {
+        text-decoration: none;
     color: #fff;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
     display: block;
-    padding: 1rem 0 0 0 ;
+    padding: .81rem;
 
     @include tablet {
         font-size: 2rem;
@@ -48,64 +45,71 @@ body {
         font-size: 1.5rem;
         padding: 1.5rem 1rem 0 7rem;
     }
-    
-}
-
-.nav-items {
-
-    @include tablet {
-        margin: 0 2.5rem;
     }
-}
 
-.nav-item {
-    display: inline-block;
-    list-style-type: none;
-    text-align: center;
-    padding: 1rem .5rem 1.2rem 0;
-    width: auto;
-
-}
-
-.nav-item__link {
-    text-decoration: none;
-    color: #fefefe;
-    font-size: 1.7rem;
-    padding: 1rem 7rem;
+    &__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        overflow: hidden;
     
-    @include tablet {
+        @include tablet {
+            margin: 0 2.5rem;
+        }
+
+    }
+
+    &__item {
+        display: inline-block;
+        list-style-type: none;
+        text-align: center;
+        height: 3rem;
+    }
+
+    &__item-link {
+        text-decoration: none;
+        color: #fefefe;
         font-size: 1.2rem;
-        padding: 1rem 0;
-    }
-
-    @include desktop {
-        font-size: 1rem;
+        padding: 1.1rem 20vw;
         
-    }
-}
-
-.nav-item__link:hover {
-    animation: fill 1s forwards;
-}
-
-.nav-item__link--active {
-    font-weight: 500;
-    color: #fff;
-    border-bottom: 5px solid #fff;
+        @include tablet {
+            font-size: 1.2rem;
+            padding: 1rem 0;
+        }
     
+        @include desktop {
+            font-size: 1rem;
+            
+        }
+    }
+
+    &__item-link--active {
+          font-weight: 500;
+    color: #fff;
+    border-bottom: 4px solid #fff;
+        
     @include tablet {
         margin-right: 4rem;
     }
+    }
+
 }
 
 
+
+
+
+
 /* Hero Image */
-.hero-image {
+.hero {
     background-image: url(../assets/images/hero-bio.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 38vh;
+    height: 25vh;
     filter: grayscale(60%);
+    display: flex;
+    justify-content: left;
+    align-items: center;;
 
    
     @include tablet {
@@ -114,76 +118,84 @@ body {
     @include desktop {
         height: 50vh;
     }
-}
 
-.hero-heading {
-    font-size: 3rem;
-    color: #fff;
-    position: relative;
-    top: 12rem;
-    left: 2rem;
+    &__heading {
+        font-size: 2.5rem;
+        color: #fff;
+        padding-left: 2rem;
+     
+        
+        @include tablet {
+          
+            font-size: 5rem;
+            font-weight: 600;
+            top: 18rem;
+        }
     
-    @include tablet {
-        left: 2.5rem;
-        top: 21rem;
-        font-size: 5rem;
-        font-weight: 600;
-        top: 18rem;
-    }
-
-    @include desktop {
-        font-size: 3.5rem;
-        margin-left: 4.5rem;
+        @include desktop {
+            font-size: 3.5rem;
+            margin-left: 4.5rem;
+        }
     }
 
 }
+
+
+
 
 
 /* Main Section, Band Biography Styling */
-.band-bio {
+.bio {
     padding: 2rem;
-}
 
-.band-bio__image {
-    background-image: url(../assets/images/band.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 25rem;
-}
+    &__heading {
+        padding: .25rem 0 1.5rem .25rem ;
+        font-size: 2rem;
+    
+        @include tablet {
+            font-size: 3rem;
+            font-weight: 500;
+            padding: 1.5rem;
+        }
+    
+        @include desktop {
+            font-size: 2.2rem;
+            margin-left: 4rem;
+        }
+    }
 
-.band-bio__heading {
-    padding: .25rem 0 1.5rem .25rem ;
-    font-size: 3.5rem;
+    &__container {
+        @include tablet {
+            width: 80%;
+            margin-left: 10%;
+        }
+    
+        @include desktop {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
 
-    @include tablet {
-        font-size: 3rem;
+        &__image {
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            
+            @include tablet {
+                height: 30rem;
+            }
+
+            @include desktop {
+                height: 40rem;
+            }
+        }
+    
+
+    &__blurb-heading {
+        padding: 1.5rem 0;
+        line-height: 1.5;
         font-weight: 500;
-        padding: 1.5rem;
-    }
-
-    @include desktop {
-        font-size: 2.2rem;
-        margin-left: 4rem;
-    }
-}
-
-.band-bio__container {
-    @include tablet {
-        width: 80%;
-        margin-left: 10%;
-    }
-
-    @include desktop {
-        width: 70%;
-        margin-left: 15%;
-    }
-}
-
-.band-bio__blurb-heading {
-    padding: 1.5rem 0;
-    line-height: 1.5;
-    font-weight: 500;
-    font-size: 2rem;
+        font-size: 1.5rem;
 
     @include tablet {
         padding: 2rem 0 .5rem 0;
@@ -195,13 +207,13 @@ body {
         font-size: 1.3rem;
         padding-right: 25%;
     }
-}
+    }
 
-.band-bio__blurb {
-    padding-bottom: 1rem;
-    font-size: 2.1rem;
-    padding-bottom: 2.6rem;
-    font-weight: 500;
+    &__blurb {
+        padding-bottom: 1rem;
+        font-size: 1.4rem;
+        padding-bottom: 2.6rem;
+        font-weight: 500;
 
     @include tablet {
         font-size: 1.3rem;
@@ -210,36 +222,35 @@ body {
     @include desktop {
         font-size: 1rem;
     }
-}
+    }
 
-.band-bio__bio {
-    @include tablet {
+    &__bio-container {
+         @include tablet {
         margin-top: 1.5rem;
     }
-}
-
-.band-bio__divider {
-    @include tablet {
-        display: flex;
-        flex-direction: row;
-        
     }
-}
 
-
-.band-bio__bio-heading {
-    padding-bottom: 2rem;
-    font-size: 1.8rem;
+    &__bio-heading {
+         padding-bottom: 3rem;
+    font-size: 1.4rem;
     font-weight: 600;
 
     @include desktop {
         font-size: 1.5rem;
     }
-}
+    }
 
-.band-bio__paragraph {
-    display: inline-block;
-    font-size: 2rem;
+    &__paragraph-divider {
+          @include tablet {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    }
+
+    &__paragraph {
+           display: inline-block;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
     
@@ -253,19 +264,17 @@ body {
         font-size: .9rem;
         line-height: 1.5;
     }
+    }
+
 }
 
-.first-paragraph {
-    margin: 1rem;
-    padding-bottom: 1rem;
-}
 
 
 /* Band Image Section */
-.band-images {
+.band {
 
     background-color: #fafafa;
-    padding: 2rem;
+    padding: 1rem;
 
     @include tablet {
         padding: 0 0 2rem 0;
@@ -273,13 +282,11 @@ body {
     @include desktop {
         padding: 0 4rem;
     }
-}
 
-
-.band-images__heading {
-    padding: 1rem 1rem 0 0;
-    font-size: 3.6rem;
-    font-weight: 600;
+    &__images-heading {
+        padding: 1rem 1rem 0 0;
+        font-size: 2rem;
+        font-weight: 600;
 
     @include tablet {
         font-size: 3.2rem;
@@ -290,27 +297,24 @@ body {
        @include desktop {
         font-size: 2.2rem;
        }
-   
-
-}
-
-.band-images__container {
-    
-
-    @include tablet {
-        text-align: center;
-        padding: 0 1rem
     }
-    @include desktop {
-        padding-bottom: 1rem;
-    }
-  
-}
 
-.band-images__images {
-    width: 100%;
-    padding-top: 2rem;
-    filter: grayscale(60%);
+    &__images-container {
+        
+        @include tablet {
+       text-align: center;
+       padding: 0 1rem
+       
+   }
+   @include desktop {
+       padding-bottom: 1rem;
+   }
+   }
+
+    &__images-image {
+        width: 100%;
+        padding-top: 1rem;
+        filter: grayscale(60%);
 
     @include tablet {
         max-width: 32%;
@@ -322,11 +326,148 @@ body {
         padding: .5rem;
     }
     
+    }
 }
 
-.band-images__images:hover {
+
+
+
+.band__images-image:hover {
     filter: grayscale(0);
 }
+
+
+// Comment Section
+.comment {
+    padding: 1rem;
+
+    
+    
+    &__section-header {
+        padding: 0 0 1rem 0;
+
+    }
+    
+    &__input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    &__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+        display: inline-block;
+        margin: 1.5rem 1rem 0 0;
+    } 
+
+    .form {
+        display: inline-flex;
+        flex-direction: column;
+        width: 88%;
+
+
+        &__label {
+            width: 100%;
+            padding: .5rem 0;
+            color: #afafaf;
+            font-size: .81rem;
+            
+        }
+
+        &__input {
+            width: 100%;
+            height: 3rem;
+            border: 1px solid #e1e1e1;
+            padding: .81rem;
+            font-family: "Avenir";
+            color: #000;
+            font-weight: 400;
+            font-size: 1rem;
+            background-color: #fafafa;
+            border-radius: 4px;
+            
+        }
+
+        &__input--textarea {
+            height: 7rem;
+        }
+
+        &__button {
+            height: 3rem;
+            background-color: #323232;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            border-radius: 4px;
+            border: 0;
+        }
+    }
+
+
+
+
+}
+
+
+
+.comments {
+    border-bottom: 1px solid #e1e1e1;
+
+
+    &__container {
+        margin: 1rem 0;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid #e1e1e1;
+
+        
+
+    }
+    
+    &__avatar-blank {
+        background-color: #e1e1e1;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 1rem 1rem 0 0; 
+    }
+
+    &__box {
+        width: auto;
+        display: inline-block;
+        height: 100%;
+        width: 90%
+    }
+
+    &__box-head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    &__name {
+        font-size: 1rem;
+    }
+
+   &__date {
+        color: #e1e1e1;
+   }
+
+    
+
+
+}
+
+
+
+
+
 
 
 /* Footer Section */
@@ -370,9 +511,9 @@ body {
 }
 
 .footer-heading {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
-    padding-top: 1.5rem;
+    padding: 1rem 0 1rem 0;
 
     @include tablet {
         display: inline-block;
@@ -415,9 +556,9 @@ body {
 }
 
 .footer-socials {
-    height: 3.2rem;
+    height: 2rem;
     display: inline-block;
-    margin: 0;
+    margin-right: 4rem;
 
     @include tablet {
         height: 2.5rem;
@@ -458,7 +599,7 @@ body {
 
 
 .footer-info__agent {
-    font-size: 1.9rem;
+    font-size: 1rem;
     font-weight: 500;
     padding-top: 1rem;
 
@@ -475,7 +616,7 @@ body {
 
 .footer-info__copy,
 .footer-info__email {
-    font-size: 1.85rem;
+    font-size: 1rem;
     padding: 2rem 0;
     color: #fff;
     text-decoration: none;
@@ -493,7 +634,7 @@ body {
 }
 
 .footer__bandsite-logo {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 400;
     padding-top: 5rem;
 
@@ -503,7 +644,7 @@ body {
 }
 
 .footer-info__copyright {
-    font-size: 1.7rem;
+    font-size: .81rem;
     font-weight: 200;
     padding-top: 1.5rem;
 

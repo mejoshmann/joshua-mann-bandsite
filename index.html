@@ -5,43 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/bio.css">
     <title>Joshua Mann BandSite</title>
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navigation">
+    <nav class="nav">
         <div class="nav__container">
             <h2><a href="./index.html" class="nav__logo">BANDSITE</a></h2>
-            <ul class="nav-items">
-                <li class="nav-item"><a href="#" class="nav-item__link nav-item__link--active">Biography</a></li>
-                <li class="nav-item"><a href="#" class="nav-item__link">Shows</a></li>
+            <ul class="nav__items">
+                <li class="nav__item"><a href="./index.html" class="nav__item-link nav__item-link--active">Biography</a></li>
+                <li class="nav__item"><a href="./pages/shows.html" class="nav__item-link">Shows</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Image and heading -->
-    <div class="hero-image">
-        <h1 class="hero-heading">The Bees Knees</h1>
+    <div class="hero">
+        <h1 class="hero__heading">The Bees Knees</h1>
     </div>
 
 
     <!-- Band Biography and Image -->
-    <main class="band-bio">
-        <h2 class="band-bio__heading">About the Musicians</h2>
-        <div class="band-bio__container">
-            <div class="band-bio__image"></div>
-            <h3 class="band-bio__blurb-heading">“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”
+    <main class="bio">
+        <h2 class="bio__heading">About the Musicians</h2>
+        <div class="bio__container">
+
+        <img src="./assets/images/band.jpg" alt="band image" class="bio__image">
+
+            
+            <h3 class="bio__blurb-heading">“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”
             </h3>
-            <h4 class="band-bio__blurb">- Bryan Teddy, lead vocalist of The Bees Knees</h4>
+            <h4 class="bio__blurb">- Bryan Teddy, lead vocalist of The Bees Knees</h4>
 
-            <div class="band-bio__bio">
+            <div class="bio__bio-container">
 
-                <h3 class="band-bio__bio-heading">The Bees Knees</h3>
+                <h3 class="bio__bio-heading">The Bees Knees</h3>
 
-                <div class="band-bio__divider">
+                <div class="bio__paragraph-divider">
 
-                <p class="band-bio__paragraph">The Bees Knees is a pop rock band originating from San Francisco,
+                <p class="bio__paragraph">The Bees Knees is a pop rock band originating from San Francisco,
                      California. The band consists of lead vocalist Bryan Teddy, 
                      guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee 
                      and drummer Freddie Fischer. The band achieved its first commercial 
@@ -50,7 +54,7 @@
                     One Trick Pony, The Cat’s Meow), Adams was confident the band could 
                     succeed even further, pushing them to sign with Magenta Records. </p>
                 
-                    <p class="band-bio__paragraph">From there, the band has soared, 
+                    <p class="bio__paragraph">From there, the band has soared, 
                     gaining international recognition and ranking in the top 10 on the Poster Charts.
                      New fans immediately fell in love with the band’s original and organic attitude,
                       solidifying their place as one of the hottest and fastest up and coming acts of 
@@ -63,24 +67,49 @@
         </div>
     </main>
     
-    <section class="band-images">
+    <section class="band">
 
-        <h2 class="band-images__heading">Photo Gallery</h2>
+        <h2 class="band__images-heading">Photo Gallery</h2>
 
-        <div class="band-images__container">
+        <div class="band__images-container">
 
-            <img src="./assets/images/Photo-gallery-1.jpg" alt="Dancing at a rave" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-2.jpg" alt="dancer at a rave" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-3.jpg" alt="dancing" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-4.jpg" alt="dancing" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-5.jpg" alt="light show" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-6.jpg" alt="Artist singing" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-7.jpg" alt="light show" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-8.jpg" alt="dj set" class="band-images__images">
-            <img src="./assets/images/Photo-gallery-9.jpg" alt="ticker tape" class="band-images__images">
+            <img src="./assets/images/Photo-gallery-1.jpg" alt="Dancing at a rave" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-2.jpg" alt="dancer at a rave" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-3.jpg" alt="dancing" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-4.jpg" alt="dancing" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-5.jpg" alt="light show" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-6.jpg" alt="Artist singing" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-7.jpg" alt="light show" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-8.jpg" alt="dj set" class="band__images-image">
+            <img src="./assets/images/Photo-gallery-9.jpg" alt="ticker tape" class="band__images-image">
         </div>
     </section>
 
+    <section class="comment">
+        <h2 class="comment__section-header">Join the Conversation</h2>
+        <div class="comment__input">
+        <img src="./assets/images/Mohan-muruge.jpg" alt="mohan muruge" class="comment__avatar">
+        <form class="form" novalidate>
+
+            <label for="name" class="form__label">Name
+                <input type="text" class="form__input" id="name" name="name" placeholder="Enter your name" required>
+            </label>
+            <label for="comment" class="form__label">Comment
+                <textarea name="comment" class="form__input form__input--textarea" id="comment" cols="30" rows="30" placeholder="Add a new comment"></textarea>
+            </label>
+            <button class="form__button" type="submit">COMMENT</button>
+        </form>
+</div>
+
+<!-- Comment container -->
+        <div class="comments">
+            
+        </div>
+
+    </section>
+
+
+<!-- Footer Section -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-container__tablet">
@@ -130,6 +159,5 @@
         
     </footer>
 
-    
+    <script src="./scripts/index-page.js"></script>
 </body>
-</html>

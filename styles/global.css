@@ -1,4 +1,3 @@
-@import url(./partials/partials.scss);
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
@@ -31,10 +30,9 @@ body {
 }
 
 /* Navigation */
-.navigation {
+.nav {
   background: #323232;
 }
-
 @media screen and (min-width: 768px) {
   .nav__container {
     display: flex;
@@ -43,15 +41,14 @@ body {
     align-items: baseline;
   }
 }
-
 .nav__logo {
   text-decoration: none;
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   text-align: center;
   display: block;
-  padding: 1rem 0 0 0;
+  padding: 0.81rem;
 }
 @media screen and (min-width: 768px) {
   .nav__logo {
@@ -65,290 +62,371 @@ body {
     padding: 1.5rem 1rem 0 7rem;
   }
 }
-
+.nav__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
 @media screen and (min-width: 768px) {
-  .nav-items {
+  .nav__items {
     margin: 0 2.5rem;
   }
 }
-
-.nav-item {
+.nav__item {
   display: inline-block;
   list-style-type: none;
   text-align: center;
-  padding: 1rem 0.5rem 1.2rem 0;
-  width: auto;
+  height: 3rem;
 }
-
-.nav-item__link {
+.nav__item-link {
   text-decoration: none;
   color: #fefefe;
-  font-size: 1.7rem;
-  padding: 1rem 7rem;
+  font-size: 1.2rem;
+  padding: 1.1rem 20vw;
 }
 @media screen and (min-width: 768px) {
-  .nav-item__link {
+  .nav__item-link {
     font-size: 1.2rem;
     padding: 1rem 0;
   }
 }
 @media screen and (min-width: 1279px) {
-  .nav-item__link {
+  .nav__item-link {
     font-size: 1rem;
   }
 }
-
-.nav-item__link:hover {
-  animation: fill 1s forwards;
-}
-
-.nav-item__link--active {
+.nav__item-link--active {
   font-weight: 500;
   color: #fff;
-  border-bottom: 5px solid #fff;
+  border-bottom: 4px solid #fff;
 }
 @media screen and (min-width: 768px) {
-  .nav-item__link--active {
+  .nav__item-link--active {
     margin-right: 4rem;
   }
 }
 
 /* Hero Image */
-.hero-image {
+.hero {
   background-image: url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 38vh;
+  height: 25vh;
   filter: grayscale(60%);
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .hero-image {
+  .hero {
     height: 47vh;
   }
 }
 @media screen and (min-width: 1279px) {
-  .hero-image {
+  .hero {
     height: 50vh;
   }
 }
-
-.hero-heading {
-  font-size: 3rem;
+.hero__heading {
+  font-size: 2.5rem;
   color: #fff;
-  position: relative;
-  top: 12rem;
-  left: 2rem;
+  padding-left: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .hero-heading {
-    left: 2.5rem;
-    top: 21rem;
+  .hero__heading {
     font-size: 5rem;
     font-weight: 600;
     top: 18rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .hero-heading {
+  .hero__heading {
     font-size: 3.5rem;
     margin-left: 4.5rem;
   }
 }
 
 /* Main Section, Band Biography Styling */
-.band-bio {
+.bio {
   padding: 2rem;
 }
-
-.band-bio__image {
-  background-image: url(../assets/images/band.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 25rem;
-}
-
-.band-bio__heading {
+.bio__heading {
   padding: 0.25rem 0 1.5rem 0.25rem;
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .band-bio__heading {
+  .bio__heading {
     font-size: 3rem;
     font-weight: 500;
     padding: 1.5rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-bio__heading {
+  .bio__heading {
     font-size: 2.2rem;
     margin-left: 4rem;
   }
 }
-
 @media screen and (min-width: 768px) {
-  .band-bio__container {
+  .bio__container {
     width: 80%;
     margin-left: 10%;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-bio__container {
+  .bio__container {
     width: 70%;
     margin-left: 15%;
   }
 }
-
-.band-bio__blurb-heading {
+.bio__image {
+  width: 100%;
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .bio__image {
+    height: 30rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .bio__image {
+    height: 40rem;
+  }
+}
+.bio__blurb-heading {
   padding: 1.5rem 0;
   line-height: 1.5;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .band-bio__blurb-heading {
+  .bio__blurb-heading {
     padding: 2rem 0 0.5rem 0;
     font-size: 1.88rem;
     line-height: 1.3;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-bio__blurb-heading {
+  .bio__blurb-heading {
     font-size: 1.3rem;
     padding-right: 25%;
   }
 }
-
-.band-bio__blurb {
+.bio__blurb {
   padding-bottom: 1rem;
-  font-size: 2.1rem;
+  font-size: 1.4rem;
   padding-bottom: 2.6rem;
   font-weight: 500;
 }
 @media screen and (min-width: 768px) {
-  .band-bio__blurb {
+  .bio__blurb {
     font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-bio__blurb {
+  .bio__blurb {
     font-size: 1rem;
   }
 }
-
 @media screen and (min-width: 768px) {
-  .band-bio__bio {
+  .bio__bio-container {
     margin-top: 1.5rem;
   }
 }
-
+.bio__bio-heading {
+  padding-bottom: 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 1279px) {
+  .bio__bio-heading {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 768px) {
-  .band-bio__divider {
+  .bio__paragraph-divider {
     display: flex;
     flex-direction: row;
   }
 }
-
-.band-bio__bio-heading {
-  padding-bottom: 2rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 1279px) {
-  .band-bio__bio-heading {
-    font-size: 1.5rem;
-  }
-}
-
-.band-bio__paragraph {
+.bio__paragraph {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .band-bio__paragraph {
+  .bio__paragraph {
     margin-right: 1.5rem;
     font-size: 1.2rem;
     line-height: 1.4;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-bio__paragraph {
+  .bio__paragraph {
     font-size: 0.9rem;
     line-height: 1.5;
   }
 }
 
-.first-paragraph {
-  margin: 1rem;
-  padding-bottom: 1rem;
-}
-
 /* Band Image Section */
-.band-images {
+.band {
   background-color: #fafafa;
-  padding: 2rem;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .band-images {
+  .band {
     padding: 0 0 2rem 0;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-images {
+  .band {
     padding: 0 4rem;
   }
 }
-
-.band-images__heading {
+.band__images-heading {
   padding: 1rem 1rem 0 0;
-  font-size: 3.6rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .band-images__heading {
+  .band__images-heading {
     font-size: 3.2rem;
     font-weight: 600;
     padding: 3rem 0 1rem 3rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-images__heading {
+  .band__images-heading {
     font-size: 2.2rem;
   }
 }
-
 @media screen and (min-width: 768px) {
-  .band-images__container {
+  .band__images-container {
     text-align: center;
     padding: 0 1rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-images__container {
+  .band__images-container {
     padding-bottom: 1rem;
   }
 }
-
-.band-images__images {
+.band__images-image {
   width: 100%;
-  padding-top: 2rem;
+  padding-top: 1rem;
   filter: grayscale(60%);
 }
 @media screen and (min-width: 768px) {
-  .band-images__images {
+  .band__images-image {
     max-width: 32%;
     padding: 1rem;
   }
 }
 @media screen and (min-width: 1279px) {
-  .band-images__images {
+  .band__images-image {
     padding: 0.5rem;
   }
 }
 
-.band-images__images:hover {
+.band__images-image:hover {
   filter: grayscale(0);
+}
+
+.comment {
+  padding: 1rem;
+}
+.comment__section-header {
+  padding: 0 0 1rem 0;
+}
+.comment__input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comment__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: inline-block;
+  margin: 1.5rem 1rem 0 0;
+}
+.comment .form {
+  display: inline-flex;
+  flex-direction: column;
+  width: 88%;
+}
+.comment .form__label {
+  width: 100%;
+  padding: 0.5rem 0;
+  color: #afafaf;
+  font-size: 0.81rem;
+}
+.comment .form__input {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #e1e1e1;
+  padding: 0.81rem;
+  font-family: "Avenir";
+  color: #000;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+.comment .form__input--textarea {
+  height: 7rem;
+}
+.comment .form__button {
+  height: 3rem;
+  background-color: #323232;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-radius: 4px;
+  border: 0;
+}
+
+.comments {
+  border-bottom: 1px solid #e1e1e1;
+}
+.comments__container {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #e1e1e1;
+}
+.comments__avatar-blank {
+  background-color: #e1e1e1;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1rem 1rem 0 0;
+}
+.comments__box {
+  width: auto;
+  display: inline-block;
+  height: 100%;
+  width: 90%;
+}
+.comments__box-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.comments__name {
+  font-size: 1rem;
+}
+.comments__date {
+  color: #e1e1e1;
 }
 
 /* Footer Section */
@@ -393,9 +471,9 @@ body {
 }
 
 .footer-heading {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  padding-top: 1.5rem;
+  padding: 1rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .footer-heading {
@@ -436,9 +514,9 @@ body {
 }
 
 .footer-socials {
-  height: 3.2rem;
+  height: 2rem;
   display: inline-block;
-  margin: 0;
+  margin-right: 4rem;
 }
 @media screen and (min-width: 768px) {
   .footer-socials {
@@ -479,7 +557,7 @@ body {
 }
 
 .footer-info__agent {
-  font-size: 1.9rem;
+  font-size: 1rem;
   font-weight: 500;
   padding-top: 1rem;
 }
@@ -497,7 +575,7 @@ body {
 
 .footer-info__copy,
 .footer-info__email {
-  font-size: 1.85rem;
+  font-size: 1rem;
   padding: 2rem 0;
   color: #fff;
   text-decoration: none;
@@ -517,7 +595,7 @@ body {
 }
 
 .footer__bandsite-logo {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 400;
   padding-top: 5rem;
 }
@@ -528,7 +606,7 @@ body {
 }
 
 .footer-info__copyright {
-  font-size: 1.7rem;
+  font-size: 0.81rem;
   font-weight: 200;
   padding-top: 1.5rem;
 }
