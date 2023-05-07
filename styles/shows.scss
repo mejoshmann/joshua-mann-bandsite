@@ -1,7 +1,244 @@
-.show-section {
-    padding: 1rem;
+@use "./partials/mixins" as *;
+@use "./partials/partials" as *;
+
+
+/* Hero Image */
+
+.hero{
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    filter: #323232(50%);
+   
+    @include tablet {
+      height: 47vh;
+      padding: 2rem;
+    }
+    @include desktop {
+        height: 50vh;
+    }
+
+    &__desktop-style {
+        @include desktop{
+        display: flex;
+        justify-content: space-between;
+        }
+    }
+
+    &__sub-heading {
+        color: #fff;
+        // padding: 2rem 0 0 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        @include tablet {
+            padding: 1rem;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        @include desktop {
+            padding-left: 4rem;
+        }
+    }
+
+    &__heading {
+        width: 70%;
+        font-size: 1.8rem;
+        color: #fff;
+        padding: 1rem;
+     
+        
+        @include tablet {
+          
+            font-size: 4.5rem;
+            font-weight: 600;
+        }
+    
+        @include desktop {
+            font-size: 3.5rem;
+            margin-left: 3rem;
+        }
+    }
+
 }
 
-.hero-image {
-    background-image: url(../assets/images/hero-bio.jpg)
+
+iframe {
+    width: 100%;
+    padding: 1rem;
+    height: 9rem;
+
+    @include tablet {
+        width: 55%;
+        height: 12rem;
+    }
+
+    @include desktop {
+        width: 50%;
+        padding-right: 4rem;
+        height: 13rem;
+
+    }
+
 }
+
+.show {
+    padding: 1rem 0;
+    
+    @include tablet {
+        padding: 2.5rem;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 4rem 6rem;
+    }
+
+
+    &__heading {
+        padding: 1rem 0 1.5rem 1rem;
+       
+        @include tablet {
+            font-size: 2.5rem;
+        }
+
+        @include desktop {
+            font-size: 3.5rem;
+            display: inline;
+            width: 13rem;
+        }
+        
+    }
+
+    &__box {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+
+        }
+    }
+
+  
+    &__container-hidden {
+        @include desktop {
+           
+        }
+    }
+
+
+
+    &__container {
+        border-bottom: 1px solid #e1e1e1;
+        padding: 1rem;
+
+
+        
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid #a1a1a1;
+
+        }  
+
+        @include desktop {
+            font-size: 1.1rem;            
+        }
+    }
+
+    &__container-silver,
+    &__venue-silver,
+    &__location-silver,
+    &__box-date,
+    &__box-venue,
+    &__box-location {
+        color: #a1a1a1;
+        padding-bottom: .1rem;
+        width: 10rem;
+    }
+
+    &__date,
+    &__venue,
+    &__location {
+    padding-top: 1rem;
+
+   }
+
+   &__container-silver,
+   &__venue-silver,
+   &__location-silver {
+    @include tablet {
+        visibility: hidden;
+    }
+   }
+
+   &__date-num,
+   &__venue-head,
+   &__location-place {
+    @include desktop {
+        font-size: 1.2rem;
+    }
+   }
+
+
+    
+
+   
+
+
+
+  
+    &__button {
+        @include show-buttons;
+
+        @include tablet {
+            width: 20%;
+            font-size: 1.1rem;
+        }
+    }
+
+    &__button:hover {
+        background-color: #000;
+
+    }
+
+ 
+
+
+}
+
+.hidden-button {
+    visibility: hidden;
+    padding: 0;
+    height: 0;
+}
+
+.show__container-hidden {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #a1a1a1;
+    }
+}
+
+
+
+
+

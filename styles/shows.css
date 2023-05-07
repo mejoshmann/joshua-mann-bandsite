@@ -1,7 +1,220 @@
-.show-section {
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Hero Image */
+.hero {
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  filter: #323232 50%;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 47vh;
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero__desktop-style {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.hero__sub-heading {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .hero__sub-heading {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero__sub-heading {
+    padding-left: 4rem;
+  }
+}
+.hero__heading {
+  width: 70%;
+  font-size: 1.8rem;
+  color: #fff;
   padding: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .hero__heading {
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero__heading {
+    font-size: 3.5rem;
+    margin-left: 3rem;
+  }
+}
 
-.hero-image {
-  background-image: url(../assets/images/hero-bio.jpg);
+iframe {
+  width: 100%;
+  padding: 1rem;
+  height: 9rem;
+}
+@media screen and (min-width: 768px) {
+  iframe {
+    width: 55%;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  iframe {
+    width: 50%;
+    padding-right: 4rem;
+    height: 13rem;
+  }
+}
+
+.show {
+  padding: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .show {
+    padding: 2.5rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem 6rem;
+  }
+}
+.show__heading {
+  padding: 1rem 0 1.5rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .show__heading {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .show__heading {
+    font-size: 3.5rem;
+    display: inline;
+    width: 13rem;
+  }
+}
+.show__box {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+}
+.show__container {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .show__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #a1a1a1;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .show__container {
+    font-size: 1.1rem;
+  }
+}
+.show__container-silver, .show__venue-silver, .show__location-silver, .show__box-date, .show__box-venue, .show__box-location {
+  color: #a1a1a1;
+  padding-bottom: 0.1rem;
+  width: 10rem;
+}
+.show__date, .show__venue, .show__location {
+  padding-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .show__container-silver, .show__venue-silver, .show__location-silver {
+    visibility: hidden;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .show__date-num, .show__venue-head, .show__location-place {
+    font-size: 1.2rem;
+  }
+}
+.show__button {
+  background-color: #323232;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+  height: 3rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .show__button {
+    width: 20%;
+    font-size: 1.1rem;
+  }
+}
+.show__button:hover {
+  background-color: #000;
+}
+
+.hidden-button {
+  visibility: hidden;
+  padding: 0;
+  height: 0;
+}
+
+.show__container-hidden {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show__container-hidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #a1a1a1;
+  }
 }/*# sourceMappingURL=shows.css.map */

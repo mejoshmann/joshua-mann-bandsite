@@ -1,8 +1,5 @@
-@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 @use "./partials/partials" as *;
-// @use url(./partials/partials.scss);
-
-
 
 * {
     margin: 0;
@@ -16,46 +13,48 @@ body {
 
 /* Navigation */
 .nav {
-    background: #323232;
+    background-color: #323232;
 
     &__container {
+
         @include tablet {
             display: flex;
             flex-direction: row;
             justify-content: start;
-            align-items: baseline;
+            align-items: center;
+        }
+
+        @include desktop {
+            
         }
     }
 
     &__logo {
         text-decoration: none;
-    color: #fff;
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-align: center;
-    display: block;
-    padding: .81rem;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        display: block;
+        padding: .81rem;
 
     @include tablet {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 1rem 2.5rem;
     }
 
     @include desktop {
+        padding: 0 6rem;
         font-size: 1.5rem;
-        padding: 1.5rem 1rem 0 7rem;
+        font-weight: 300;
     }
     }
 
     &__items {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-        overflow: hidden;
-    
-        @include tablet {
-            margin: 0 2.5rem;
-        }
+        justify-content: space-between;
+        
 
     }
 
@@ -63,411 +62,46 @@ body {
         display: inline-block;
         list-style-type: none;
         text-align: center;
-        height: 3rem;
+        padding: .5rem;
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+      
     }
 
     &__item-link {
+        position: relative;
         text-decoration: none;
-        color: #fefefe;
-        font-size: 1.2rem;
-        padding: 1.1rem 20vw;
+        color: #afafaf;
+        font-size: 1rem;
+        font-weight: 300;
+        width: 100%;
+        
         
         @include tablet {
-            font-size: 1.2rem;
+            font-size: 1rem;
             padding: 1rem 0;
+            width: 100%;
+            margin-right: 1rem;
         }
     
         @include desktop {
-            font-size: 1rem;
-            
+            padding: 2.1rem 0;
+            font-size: 1.2rem;
         }
     }
 
     &__item-link--active {
-          font-weight: 500;
-    color: #fff;
-    border-bottom: 4px solid #fff;
-        
-    @include tablet {
-        margin-right: 4rem;
-    }
-    }
-
-}
-
-
-
-
-
-
-/* Hero Image */
-.hero {
-    background-image: url(../assets/images/hero-bio.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 25vh;
-    filter: grayscale(60%);
-    display: flex;
-    justify-content: left;
-    align-items: center;;
+        font-weight: 500;
+        color: #fff;
+        border-bottom: 4px solid #fff;
 
    
-    @include tablet {
-      height: 47vh;
-    }
-    @include desktop {
-        height: 50vh;
-    }
-
-    &__heading {
-        font-size: 2.5rem;
-        color: #fff;
-        padding-left: 2rem;
-     
-        
-        @include tablet {
-          
-            font-size: 5rem;
-            font-weight: 600;
-            top: 18rem;
-        }
-    
-        @include desktop {
-            font-size: 3.5rem;
-            margin-left: 4.5rem;
-        }
     }
 
 }
-
-
-
-
-
-/* Main Section, Band Biography Styling */
-.bio {
-    padding: 2rem;
-
-    &__heading {
-        padding: .25rem 0 1.5rem .25rem ;
-        font-size: 2rem;
-    
-        @include tablet {
-            font-size: 3rem;
-            font-weight: 500;
-            padding: 1.5rem;
-        }
-    
-        @include desktop {
-            font-size: 2.2rem;
-            margin-left: 4rem;
-        }
-    }
-
-    &__container {
-        @include tablet {
-            width: 80%;
-            margin-left: 10%;
-        }
-    
-        @include desktop {
-            width: 70%;
-            margin-left: 15%;
-        }
-    }
-
-        &__image {
-            width: 100%;
-            height: 20rem;
-            object-fit: cover;
-            
-            @include tablet {
-                height: 30rem;
-            }
-
-            @include desktop {
-                height: 40rem;
-            }
-        }
-    
-
-    &__blurb-heading {
-        padding: 1.5rem 0;
-        line-height: 1.5;
-        font-weight: 500;
-        font-size: 1.5rem;
-
-    @include tablet {
-        padding: 2rem 0 .5rem 0;
-        font-size: 1.88rem;
-        line-height: 1.3;
-    }
-
-    @include desktop {
-        font-size: 1.3rem;
-        padding-right: 25%;
-    }
-    }
-
-    &__blurb {
-        padding-bottom: 1rem;
-        font-size: 1.4rem;
-        padding-bottom: 2.6rem;
-        font-weight: 500;
-
-    @include tablet {
-        font-size: 1.3rem;
-    }
-
-    @include desktop {
-        font-size: 1rem;
-    }
-    }
-
-    &__bio-container {
-         @include tablet {
-        margin-top: 1.5rem;
-    }
-    }
-
-    &__bio-heading {
-         padding-bottom: 3rem;
-    font-size: 1.4rem;
-    font-weight: 600;
-
-    @include desktop {
-        font-size: 1.5rem;
-    }
-    }
-
-    &__paragraph-divider {
-          @include tablet {
-        display: flex;
-        flex-direction: row;
-        
-    }
-    }
-
-    &__paragraph {
-           display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    
-    @include tablet {
-        margin-right: 1.5rem;
-        font-size: 1.2rem;
-        line-height: 1.4;
-    }
-
-    @include desktop {
-        font-size: .9rem;
-        line-height: 1.5;
-    }
-    }
-
-}
-
-
-
-/* Band Image Section */
-.band {
-
-    background-color: #fafafa;
-    padding: 1rem;
-
-    @include tablet {
-        padding: 0 0 2rem 0;
-    }
-    @include desktop {
-        padding: 0 4rem;
-    }
-
-    &__images-heading {
-        padding: 1rem 1rem 0 0;
-        font-size: 2rem;
-        font-weight: 600;
-
-    @include tablet {
-        font-size: 3.2rem;
-        font-weight: 600;
-        padding: 3rem 0 1rem 3rem;
-       }
-
-       @include desktop {
-        font-size: 2.2rem;
-       }
-    }
-
-    &__images-container {
-        
-        @include tablet {
-       text-align: center;
-       padding: 0 1rem
-       
-   }
-   @include desktop {
-       padding-bottom: 1rem;
-   }
-   }
-
-    &__images-image {
-        width: 100%;
-        padding-top: 1rem;
-        filter: grayscale(60%);
-
-    @include tablet {
-        max-width: 32%;
-        padding: 1rem;
-
-    }
-
-    @include desktop {
-        padding: .5rem;
-    }
-    
-    }
-}
-
-
-
-
-.band__images-image:hover {
-    filter: grayscale(0);
-}
-
-
-// Comment Section
-.comment {
-    padding: 1rem;
-
-    
-    
-    &__section-header {
-        padding: 0 0 1rem 0;
-
-    }
-    
-    &__input {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    &__avatar {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        object-fit: cover;
-        display: inline-block;
-        margin: 1.5rem 1rem 0 0;
-    } 
-
-    .form {
-        display: inline-flex;
-        flex-direction: column;
-        width: 88%;
-
-
-        &__label {
-            width: 100%;
-            padding: .5rem 0;
-            color: #afafaf;
-            font-size: .81rem;
-            
-        }
-
-        &__input {
-            width: 100%;
-            height: 3rem;
-            border: 1px solid #e1e1e1;
-            padding: .81rem;
-            font-family: "Avenir";
-            color: #000;
-            font-weight: 400;
-            font-size: 1rem;
-            background-color: #fafafa;
-            border-radius: 4px;
-            
-        }
-
-        &__input--textarea {
-            height: 7rem;
-        }
-
-        &__button {
-            height: 3rem;
-            background-color: #323232;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 400;
-            border-radius: 4px;
-            border: 0;
-        }
-    }
-
-
-
-
-}
-
-
-
-.comments {
-    border-bottom: 1px solid #e1e1e1;
-
-
-    &__container {
-        margin: 1rem 0;
-        padding-bottom: 1rem;
-        display: flex;
-        flex-direction: row;
-        border-top: 1px solid #e1e1e1;
-
-        
-
-    }
-    
-    &__avatar-blank {
-        background-color: #e1e1e1;
-        height: 3rem;
-        width: 3rem;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 1rem 1rem 0 0; 
-    }
-
-    &__box {
-        width: auto;
-        display: inline-block;
-        height: 100%;
-        width: 90%
-    }
-
-    &__box-head {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 0;
-    }
-
-    &__name {
-        font-size: 1rem;
-    }
-
-   &__date {
-        color: #e1e1e1;
-   }
-
-    
-
-
-}
-
-
-
-
-
 
 
 /* Footer Section */
@@ -511,11 +145,12 @@ body {
 }
 
 .footer-heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 500;
     padding: 1rem 0 1rem 0;
 
     @include tablet {
+        font-size: 2.5rem;
         display: inline-block;
         margin-right: 2rem;
     }
@@ -531,12 +166,13 @@ body {
 
 
 // used to hide bandsite logo at bottom for larger sizing
+
 .footer__bandsite-logo--tablet {
     display: none;
 
     @include tablet {
         display: inline-block;
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 300;
         text-align: right;
     }
@@ -558,10 +194,10 @@ body {
 .footer-socials {
     height: 2rem;
     display: inline-block;
-    margin-right: 4rem;
+    margin-right: 2rem;
 
     @include tablet {
-        height: 2.5rem;
+        height: 1.7rem;
         margin-right: 2rem;
     }
 
@@ -604,7 +240,8 @@ body {
     padding-top: 1rem;
 
     @include tablet {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding-bottom: .81rem;
     }
 
     @include desktop {
@@ -617,12 +254,13 @@ body {
 .footer-info__copy,
 .footer-info__email {
     font-size: 1rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
     color: #fff;
     text-decoration: none;
 
     @include tablet {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        
     }
 
     @include desktop {
@@ -634,8 +272,8 @@ body {
 }
 
 .footer__bandsite-logo {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 300;
     padding-top: 5rem;
 
     @include tablet {
@@ -646,10 +284,11 @@ body {
 .footer-info__copyright {
     font-size: .81rem;
     font-weight: 200;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 
     @include tablet {
-        font-size: 1.4rem;
+        font-size: 1rem;
+        padding-left: 1rem;
     }
 
     @include desktop {
