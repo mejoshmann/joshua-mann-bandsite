@@ -1,73 +1,124 @@
 // Form Event Handler 
 const form = document.querySelector('.form');
 const commentContainer = document.querySelector(".comments");
+// const apiKey = ("api_key":"b725d573-7a9a-40b2-8bce-0ef08160c3dc");
 
 // Pre populated Comment Cards.
 
-const commentCards = [
+// const commentCards = [
 
-{ 
-name: "Connor Walton",
-date: "02/17/2021",
-comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-},
+// { 
+// name: "Connor Walton",
+// date: "02/17/2021",
+// comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+// },
 
-{ 
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-},
+// { 
+//     name: "Emilie Beach",
+//     date: "01/09/2021",
+//     comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+// },
 
-{ 
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-},
+// { 
+//     name: "Miles Acosta",
+//     date: "12/20/2020",
+//     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+// },
 
-];
+// ];
 
-function displayComment(aComment) {
+// function displayComment(aComment) {
 
-    for(let i = 0; i < commentCards.length; i++) {
+//     for(let i = 0; i < commentCards.length; i++) {
 
-        const aComment = commentCards[i];
+//         const aComment = commentCards[i];
     
-        const container = document.createElement("div");
-        container.classList.add("comments__container");
-        commentContainer.appendChild(container);
+//         const container = document.createElement("div");
+//         container.classList.add("comments__container");
+//         commentContainer.appendChild(container);
 
-        const avatar = document.createElement("div");
-        avatar.classList.add("comments__avatar-blank");
-        container.appendChild(avatar);
+//         const avatar = document.createElement("div");
+//         avatar.classList.add("comments__avatar-blank");
+//         container.appendChild(avatar);
 
-        const box = document.createElement("div");
-        box.classList.add("comments__box");
-        container.appendChild(box);
+//         const box = document.createElement("div");
+//         box.classList.add("comments__box");
+//         container.appendChild(box);
 
-        const boxHead = document.createElement("div");
-        boxHead.classList.add("comments__box-head");
-        box.appendChild(boxHead);
+//         const boxHead = document.createElement("div");
+//         boxHead.classList.add("comments__box-head");
+//         box.appendChild(boxHead);
 
-        const name = document.createElement("h3");
-        name.classList.add("comments__name");
-        name.textContent = aComment.name;
-        boxHead.appendChild(name);
+//         const name = document.createElement("h3");
+//         name.classList.add("comments__name");
+//         name.textContent = aComment.name;
+//         boxHead.appendChild(name);
 
-        const date = document.createElement("p");
-        date.classList.add("comments__date");
-        date.textContent = aComment.date;
-        boxHead.appendChild(date);
+//         const date = document.createElement("p");
+//         date.classList.add("comments__date");
+//         date.textContent = aComment.date;
+//         boxHead.appendChild(date);
 
-        const comment = document.createElement("p");
-        comment.classList.add("comments__comment");
-        comment.textContent = aComment.comment;
-        box.appendChild(comment);
+//         const comment = document.createElement("p");
+//         comment.classList.add("comments__comment");
+//         comment.textContent = aComment.comment;
+//         box.appendChild(comment);
 
 
-    }
-};
+//     }
+// };
 
-displayComment();
+// displayComment();
+
+
+function getCommentsAppend() {
+    axios.get(`https://project-1-api.herokuapp.com/comments?api_key=b725d573-7a9a-40b2-8bce-0ef08160c3dc`)
+         .then((result) => {
+            // console.log(result.data);
+
+
+            result.data.forEach((comment) => {
+                // console.log(comment.name);
+
+                    const container = document.createElement("div");
+                    container.classList.add("comments__container");
+                    commentContainer.appendChild(container);
+                
+                    // const avatar = document.createElement("div");
+                    // avatar.classList.add("comments__avatar-blank");
+                    // container.appendChild(avatar);
+                
+                    const box = document.createElement("div");
+                    box.classList.add("comments__box");
+                    container.appendChild(box);
+                
+                    const boxHead = document.createElement("div");
+                    boxHead.classList.add("comments__box-head");
+                    box.appendChild(boxHead);
+                
+                    const name = document.createElement("h3");
+                    name.classList.add("comments__name");
+                    name.textContent = comment.name;
+                    boxHead.appendChild(name);
+                
+                    // TODO Fix date
+                    // const date = document.createElement("p");
+                    // date.classList.add("comments__date");
+                    // date.textContent = comment.date;
+                    // boxHead.appendChild(date);
+                
+                    const isComment = document.createElement("p");
+                    isComment.classList.add("comments__comment");
+                    isComment.textContent = comment.comment;
+                    box.appendChild(isComment);
+
+            });
+
+         });
+        };
+
+   
+getCommentsAppend();
 
 
 
@@ -78,20 +129,20 @@ displayComment();
         const formInput = document.querySelector('.form__input');
         const formText = document.querySelector('.form__input--textarea');
         // const newDate = new Date(newDate(toLocaleString()));
-        const date = new Date();
-        console.log(date.toLocaleDateString());
+        // const date = new Date();
+        // console.log(date.toLocaleDateString());
 
         const newComment = 
             {
                 name: document.querySelector(".form__input").value,
-                date: date, // Need to figure out the date format
+                date: new Date(), // Need to figure out the date format
                 comment: document.querySelector(".form__input--textarea").value,
             };
             
         
             commentCards.unshift(newComment);
             commentCards.pop();
-            displayComment();
+            getCommentsAppend();
 
             
             // Not working properly
