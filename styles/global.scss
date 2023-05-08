@@ -91,16 +91,21 @@ body {
             padding: 2.1rem 0;
             font-size: 1.2rem;
         }
+
+    
+    }
+
+    &__item-link: hover {
+        font-weight: 700;
     }
 
     &__item-link--active {
         font-weight: 500;
         color: #fff;
         border-bottom: 4px solid #fff;
-
-   
     }
 
+   
 }
 
 .hero {

@@ -56,7 +56,7 @@ function displayShows(show) {
 
   const dateHead = document.createElement('p');
   dateHead.classList.add('show__container-silver')
-  dateHead.innerText = "Date";
+  dateHead.innerText = "DATE";
   showDate.appendChild(dateHead);
 
   const date = document.createElement('p');
@@ -71,7 +71,7 @@ function displayShows(show) {
 
   const venueHead = document.createElement('p');
   venueHead.classList.add('show__venue-silver');
-  venueHead.innerText = "Venue";
+  venueHead.innerText = "VENUE";
   showVenue.appendChild(venueHead);
 
   const venuePlace = document.createElement('p');
@@ -87,7 +87,7 @@ function displayShows(show) {
 
   const localHead = document.createElement('p');
   localHead.classList.add('show__location-silver');
-  localHead.innerText = "Location";
+  localHead.innerText = "LOCATION";
   showLocal.appendChild(localHead);
  
   
@@ -99,7 +99,7 @@ function displayShows(show) {
 
   const button = document.createElement('button');
   button.classList.add('show__button');
-  button.innerText = "Buy Tickets";
+  button.innerText = "BUY TICKETS";
   showContainer.appendChild(button);
 
 
