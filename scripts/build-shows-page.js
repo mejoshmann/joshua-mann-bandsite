@@ -103,8 +103,9 @@ function displayShows(show) {
   showContainer.appendChild(button);
 
 
-  }
-}
+
+  };
+};
 
 
 displayShows();

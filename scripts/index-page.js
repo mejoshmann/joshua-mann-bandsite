@@ -26,10 +26,12 @@ comment: "This is art. This is inexplicable magic expressed in the purest way, e
 
 ];
 
-function displayComment() {
+function displayComment(aComment) {
 
-    commentCards.forEach((comments) => {
+    for(let i = 0; i < commentCards.length; i++) {
 
+        const aComment = commentCards[i];
+    
         const container = document.createElement("div");
         container.classList.add("comments__container");
         commentContainer.appendChild(container);
@@ -48,20 +50,21 @@ function displayComment() {
 
         const name = document.createElement("h3");
         name.classList.add("comments__name");
-        name.textContent = comments.name;
+        name.textContent = aComment.name;
         boxHead.appendChild(name);
 
         const date = document.createElement("p");
         date.classList.add("comments__date");
-        date.textContent = comments.date;
+        date.textContent = aComment.date;
         boxHead.appendChild(date);
 
         const comment = document.createElement("p");
         comment.classList.add("comments__comment");
-        comment.textContent = comments.comment;
+        comment.textContent = aComment.comment;
         box.appendChild(comment);
-});
 
+
+    }
 };
 
 displayComment();
@@ -86,8 +89,13 @@ displayComment();
             commentCards.unshift(newComment);
             commentCards.pop();
             displayComment();
-            formInput.innerHTML = "";
-            formText.innerHTML = "";
+
+            
+            // Not working properly
+            formInput.innerText.value = '';
+            formText.innerHTML.value = '';
+
+
         
     });
     

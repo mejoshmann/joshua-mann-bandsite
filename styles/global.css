@@ -108,6 +108,10 @@ body {
   border-bottom: 4px solid #fff;
 }
 
+.hero {
+  filter: grayscale(50%);
+}
+
 /* Footer Section */
 .footer {
   background-color: #323232;

@@ -92,10 +92,11 @@
         <form class="form" novalidate>
 
             <label for="name" class="form__label">Name
+                <!-- Required not working properly -->
                 <input type="text" class="form__input" id="name" name="name" placeholder="Enter your name" required>
             </label>
             <label for="comment" class="form__label">Comment
-                <textarea name="comment" class="form__input form__input--textarea" id="comment" cols="30" rows="30" placeholder="Add a new comment"></textarea>
+                <textarea name="comment" class="form__input form__input--textarea" id="comment" cols="30" rows="30" placeholder="Add a new comment" required></textarea>
             </label>
             <button class="form__button" type="submit">COMMENT</button>
         </form>
@@ -103,6 +104,8 @@
 
 <!-- Comment container -->
         <div class="comments">
+
+            <!-- Date not showing correctly -->
             
         </div>
 

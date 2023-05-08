@@ -1,5 +1,5 @@
 @use "./partials/mixins" as *;
-@use "./partials/partials" as *;
+@use "./partials/fonts" as *;
 
 
 /* Hero Image */
@@ -186,12 +186,24 @@ iframe {
     }
    }
 
+   &__date-num {
+    font-weight: 700;
+   }
+
    &__date-num,
    &__venue-head,
    &__location-place {
     @include desktop {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
+   }
+
+  .show__container:hover {
+    background-color: #fafafa;
+   }
+
+   .show__container:active {
+    background-color: #e1e1e1;
    }
 
 

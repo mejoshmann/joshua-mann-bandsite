@@ -1,5 +1,5 @@
 @use "../styles/partials/mixins" as *;
-@use "./partials/partials" as *;
+@use "./partials/fonts" as *;
 
 /* Hero Image */
 .hero {
@@ -297,6 +297,10 @@
             height: 3.5rem;
             margin: 1.8rem 0 0 1rem;
         }
+
+        @include desktop {
+            margin-right: 1rem;
+        }
     } 
 
     .form {
@@ -340,16 +344,16 @@
                 padding: 1rem;
                 font-size: 1rem;
             }
+
+           
             
         }
+    //    Active state not working properly?
         &__input:active {
-            border: 1px soild #323232;
+            border: 1px solid #323232;;
         }
 
-        // Figure out why this doesn't work properly
-        // &__input:invalid {
-        //     border: 1px solid #d22d2d;
-        // }
+       
 
         &__input--textarea {
             height: 7rem;

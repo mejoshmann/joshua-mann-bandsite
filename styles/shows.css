@@ -176,10 +176,19 @@ iframe {
     visibility: hidden;
   }
 }
+.show__date-num {
+  font-weight: 700;
+}
 @media screen and (min-width: 1279px) {
   .show__date-num, .show__venue-head, .show__location-place {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+}
+.show .show__container:hover {
+  background-color: #fafafa;
+}
+.show .show__container:active {
+  background-color: #e1e1e1;
 }
 .show__button {
   background-color: #323232;

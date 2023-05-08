@@ -1,5 +1,5 @@
 @use "./partials/mixins" as *;
-@use "./partials/partials" as *;
+@use "./partials/fonts" as *;
 
 * {
     margin: 0;
@@ -101,6 +101,10 @@ body {
    
     }
 
+}
+
+.hero {
+  filter: grayscale(50%);
 }
 
 
