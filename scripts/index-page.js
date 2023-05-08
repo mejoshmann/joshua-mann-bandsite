@@ -77,25 +77,28 @@ displayComment();
         commentContainer.innerHTML = " ";
         const formInput = document.querySelector('.form__input');
         const formText = document.querySelector('.form__input--textarea');
-        
+        // const newDate = new Date(newDate(toLocaleString()));
+        const date = new Date();
+        console.log(date.toLocaleDateString());
+
         const newComment = 
             {
                 name: document.querySelector(".form__input").value,
-                date: Date(), // Need to figure out the date format
+                date: date, // Need to figure out the date format
                 comment: document.querySelector(".form__input--textarea").value,
             };
+            
         
-            console.log(newComment);
             commentCards.unshift(newComment);
             commentCards.pop();
             displayComment();
 
             
             // Not working properly
-            formInput.innerText.value = '';
-            formText.innerHTML.value = '';
+            // formInput.innerText.value = '';
+            // formText.innerText.value = '';
 
-
+          
         
     });
     
