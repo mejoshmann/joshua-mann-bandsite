@@ -349,10 +349,13 @@
             
         }
     //    Active state not working properly?
-        &__input:active {
-            border: 1px solid #323232;;
+        &__input:focus {
+            outline: none;
+            border: 1px solid #323232;
+
         }
 
+        
        
 
         &__input--textarea {
@@ -464,6 +467,10 @@
     
 
 
+}
+
+.form-error {
+    border: 1px solid #D22D2D;
 }
 
 

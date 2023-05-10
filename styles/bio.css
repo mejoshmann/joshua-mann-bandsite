@@ -345,7 +345,8 @@
     font-size: 1rem;
   }
 }
-.comment .form__input:active {
+.comment .form__input:focus {
+  outline: none;
   border: 1px solid #323232;
 }
 .comment .form__input--textarea {
@@ -442,4 +443,8 @@
   .comments__comment {
     font-size: 1.1rem;
   }
+}
+
+.form-error {
+  border: 1px solid #D22D2D;
 }/*# sourceMappingURL=bio.css.map */
