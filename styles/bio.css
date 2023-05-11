@@ -25,19 +25,24 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 25vh;
-  filter: #323232 50%;
   display: flex;
   justify-content: left;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 44vh;
+    height: 62vh;
   }
 }
 @media screen and (min-width: 1279px) {
   .hero {
-    height: 50vh;
+    height: 85vh;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .hero__desktop-style {
+    display: flex;
+    justify-content: space-between;
   }
 }
 .hero__heading {
@@ -54,7 +59,7 @@
 }
 @media screen and (min-width: 1279px) {
   .hero__heading {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     margin-left: 4.5rem;
   }
 }
@@ -69,8 +74,8 @@
 }
 @media screen and (min-width: 768px) {
   .bio__heading {
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2.2rem;
+    font-weight: 600;
     padding: 1.5rem;
   }
 }
@@ -82,8 +87,8 @@
 }
 @media screen and (min-width: 768px) {
   .bio__container {
-    width: 80%;
-    margin-left: 10%;
+    width: 85%;
+    margin-left: 7.5%;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -444,6 +449,10 @@
   .comments__comment {
     font-size: 1.1rem;
   }
+}
+
+#likeBtn {
+  display: none;
 }
 
 .form__input-textarea.form-error {

@@ -7,9 +7,7 @@
 
           console.log(result.data);
   
-    // for (let i = 0; i < result.data.length; i++) {
-  
-      // const show = result.data[i];
+   
       result.data.forEach((show) => {
 
   
@@ -30,7 +28,7 @@
   
     const date = document.createElement('p');
     date.classList.add('show__date-num');
-    date.textContent = show.date;
+    date.textContent = new Date(show.date).toLocaleDateString('ca');
     showDate.appendChild(date);
     
     // Venue container

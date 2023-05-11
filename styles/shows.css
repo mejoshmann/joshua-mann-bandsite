@@ -24,22 +24,21 @@
   background-image: url(../assets/images/hero-shows.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 30vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  filter: #323232 50%;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 47vh;
+    height: 70vh;
     padding: 2rem;
   }
 }
 @media screen and (min-width: 1279px) {
   .hero {
-    height: 50vh;
+    height: 90vh;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -50,13 +49,13 @@
 }
 .hero__sub-heading {
   color: #fff;
+  padding: 2rem 0 0 1rem;
   font-size: 1.2rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .hero__sub-heading {
-    padding: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
   }
 }
@@ -66,20 +65,20 @@
   }
 }
 .hero__heading {
-  width: 70%;
+  width: 65%;
   font-size: 1.8rem;
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .hero__heading {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
   }
 }
 @media screen and (min-width: 1279px) {
   .hero__heading {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     margin-left: 3rem;
   }
 }
@@ -91,8 +90,8 @@ iframe {
 }
 @media screen and (min-width: 768px) {
   iframe {
-    width: 55%;
-    height: 12rem;
+    width: 50%;
+    height: 10rem;
   }
 }
 @media screen and (min-width: 1279px) {
