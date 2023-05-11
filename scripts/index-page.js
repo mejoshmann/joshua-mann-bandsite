@@ -8,6 +8,10 @@ const commentContainer = document.querySelector(".comments");
         container.classList.add("comments__container");
         commentContainer.appendChild(container);
 
+        const avatar = document.createElement("div");
+        avatar.classList.add("comments__avatar-blank");
+        container.appendChild(avatar);
+
         const box = document.createElement("div");
         box.classList.add("comments__box");
         container.appendChild(box);
@@ -57,7 +61,7 @@ postComment = (name, comment) => {
         comment: comment,
     })
     .then((result) => {
-        console.log(result);
+
     })
     .catch((error) => {
         console.log(error);
@@ -72,10 +76,14 @@ postComment = (name, comment) => {
         
          if (nameInput === '') {
             alert("Please enter your name ");
+            e.target.name.classList.add("form-error")
+            return;
          }
          if (commentInput === '') {
             alert("Please leave a comment");
+            return;
          }
+        
          postComment(nameInput, commentInput);
          e.target.reset();
 

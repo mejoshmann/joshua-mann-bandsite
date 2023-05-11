@@ -409,6 +409,7 @@
   border-radius: 50%;
   display: inline-block;
   margin: 1rem 1rem 0 0;
+  visibility: hidden;
 }
 @media screen and (min-width: 768px) {
   .comments__avatar-blank {
@@ -445,6 +446,10 @@
   }
 }
 
-.form-error {
+.form__input-textarea.form-error {
+  border: 1px solid #D22D2D;
+}
+
+.form__input.form-error {
   border: 1px solid #D22D2D;
 }/*# sourceMappingURL=bio.css.map */

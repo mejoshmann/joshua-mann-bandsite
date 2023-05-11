@@ -425,6 +425,7 @@
         border-radius: 50%;
         display: inline-block;
         margin: 1rem 1rem 0 0; 
+        visibility: hidden;
 
         @include tablet {
             height: 3.5rem;
@@ -469,9 +470,17 @@
 
 }
 
-.form-error {
+.form__input-textarea.form-error {
     border: 1px solid #D22D2D;
+
 }
+
+.form__input.form-error {
+    border: 1px solid #D22D2D;
+
+}
+
+
 
 
 
