@@ -102,14 +102,13 @@ body {
     font-size: 1.2rem;
   }
 }
+.nav__item-link:hover {
+  font-weight: 700;
+}
 .nav__item-link--active {
   font-weight: 500;
   color: #fff;
   border-bottom: 4px solid #fff;
-}
-
-.hero {
-  filter: grayscale(50%);
 }
 
 /* Footer Section */

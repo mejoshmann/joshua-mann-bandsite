@@ -1,93 +1,92 @@
 const form = document.querySelector('.form');
 const commentContainer = document.querySelector(".comments");
 
- commentArrayAppend = (commentArray) => {
-    for (let i = 0; i < commentArray.length; i++) {
+    displayComments = (commentArray) => {
+        for (let i = 0; i < commentArray.length; i++) {
 
-        const container = document.createElement("div");
-        container.classList.add("comments__container");
-        commentContainer.appendChild(container);
+            const container = document.createElement("div");
+            container.classList.add("comments__container");
+            commentContainer.appendChild(container);
 
-        const avatar = document.createElement("div");
-        avatar.classList.add("comments__avatar-blank");
-        container.appendChild(avatar);
+            const avatar = document.createElement("div");
+            avatar.classList.add("comments__avatar-blank");
+            container.appendChild(avatar);
 
-        const box = document.createElement("div");
-        box.classList.add("comments__box");
-        container.appendChild(box);
-    
-        const boxHead = document.createElement("div");
-        boxHead.classList.add("comments__box-head");
-        box.appendChild(boxHead);
+            const box = document.createElement("div");
+            box.classList.add("comments__box");
+            container.appendChild(box);
+        
+            const boxHead = document.createElement("div");
+            boxHead.classList.add("comments__box-head");
+            box.appendChild(boxHead);
 
-        const commentName = document.createElement("h3");
-        commentName.classList.add("comments__name");
-        commentName.textContent = commentArray[i].name;
-        boxHead.appendChild(commentName);
+            const commentName = document.createElement("h3");
+            commentName.classList.add("comments__name");
+            commentName.textContent = commentArray[i].name;
+            boxHead.appendChild(commentName);
 
-        const date = document.createElement("p");
-        date.classList.add("comments__date");
-        date.textContent =  new Date(commentArray[i].timestamp).toLocaleDateString('ca');
-        boxHead.appendChild(date);
-    
-        const comment = document.createElement("p");
-        comment.classList.add("comments__comment");
-        comment.textContent = commentArray[i].comment;
-        box.appendChild(comment);
+            const date = document.createElement("p");
+            date.classList.add("comments__date");
+            date.textContent =  new Date(commentArray[i].timestamp).toLocaleDateString('ca');
+            boxHead.appendChild(date);
+        
+            const comment = document.createElement("p");
+            comment.classList.add("comments__comment");
+            comment.textContent = commentArray[i].comment;
+            box.appendChild(comment);
+        }
     }
-}
 
 
 
-getCommentsAppend = () => {
-    axios.get(`https://project-1-api.herokuapp.com/comments?api_key=ae6dd861-e1f6-45a7-bdb8-b95541ad30fa`)
-         .then((result) => {
-            console.log(result.data);
+    getCommentsAppend = () => {
+        axios.get(`https://project-1-api.herokuapp.com/comments?api_key=ae6dd861-e1f6-45a7-bdb8-b95541ad30fa`)
+            .then((result) => {
+                console.log(result.data);
 
-            result.data.sort((a, b)=> {
-                return b.timestamp - a.timestamp;
-            });
+                result.data.sort((a, b)=> {
+                    return b.timestamp - a.timestamp;
+                });
              
-            commentArrayAppend(result.data);
-            
-         });
-        };
+                displayComments(result.data);
+            });
+    };
 
 
 
-postComment = (name, comment) => {
-    axios.post(`https://project-1-api.herokuapp.com/comments/?api_key=ae6dd861-e1f6-45a7-bdb8-b95541ad30fa`, {
-        name: name,
-        comment: comment,
-    })
-    .then((result) => {
+    postComment = (name, comment) => {
+        axios.post(`https://project-1-api.herokuapp.com/comments/?api_key=ae6dd861-e1f6-45a7-bdb8-b95541ad30fa`, {
+            name: name,
+            comment: comment,
+        })
+        .then((result) => {
 
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-};
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
 
    
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const nameInput = e.target.name.value;
-            const commentInput = e.target.comment.value;
+                const nameInput = e.target.name.value;
+                const commentInput = e.target.comment.value;
         
-         if (nameInput === '') {
-            alert("Please enter your name ");
-            e.target.name.classList.add("form-error")
-            return;
-         }
-         if (commentInput === '') {
-            alert("Please leave a comment");
-            return;
-         }
+                if (nameInput === '') {
+                    alert("Please enter your name ");
+                        e.target.name.classList.add("form-error")
+                        return;
+                }
+                if (commentInput === '') {
+                    alert("Please leave a comment");
+                        return;
+                }
         
-         postComment(nameInput, commentInput);
-         e.target.reset();
+                postComment(nameInput, commentInput);
+                     e.target.reset();
 
-    });
+        });
 
     getCommentsAppend();
     

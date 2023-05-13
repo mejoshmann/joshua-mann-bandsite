@@ -15,102 +15,93 @@ body {
 .nav {
     background-color: #323232;
 
-    &__container {
+        &__container {
 
-        @include tablet {
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+            }
+
+      
+        }
+
+        &__logo {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+            display: block;
+            padding: .81rem;
+
+                @include tablet {
+                    font-size: 1.5rem;
+                    padding: 1rem 2.5rem;
+                }
+
+                @include desktop {
+                    padding: 0 6rem;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                }
+        }
+
+        &__items {
             display: flex;
             flex-direction: row;
-            justify-content: start;
-            align-items: center;
+            justify-content: space-between;
         }
 
-        @include desktop {
-            
-        }
-    }
-
-    &__logo {
-        text-decoration: none;
-        color: #fff;
-        font-size: 2rem;
-        font-weight: 400;
-        text-align: center;
-        display: block;
-        padding: .81rem;
-
-    @include tablet {
-        font-size: 1.5rem;
-        padding: 1rem 2.5rem;
-    }
-
-    @include desktop {
-        padding: 0 6rem;
-        font-size: 1.5rem;
-        font-weight: 300;
-    }
-    }
-
-    &__items {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        
-
-    }
-
-    &__item {
-        display: inline-block;
-        list-style-type: none;
-        text-align: center;
-        padding: .5rem;
-        width: 100%;
-
-        @include tablet {
-            width: auto;
-        }
-      
-    }
-
-    &__item-link {
-        position: relative;
-        text-decoration: none;
-        color: #afafaf;
-        font-size: 1rem;
-        font-weight: 300;
-        width: 100%;
-        
-        
-        @include tablet {
-            font-size: 1rem;
-            padding: 1rem 0;
+        &__item {
+            display: inline-block;
+            list-style-type: none;
+            text-align: center;
+            padding: .5rem;
             width: 100%;
-            margin-right: 1rem;
+
+                @include tablet {
+                    width: auto;
+                }
+      
+        }
+
+        &__item-link {
+            position: relative;
+            text-decoration: none;
+            color: #afafaf;
+            font-size: 1rem;
+            font-weight: 300;
+            width: 100%;
+        
+            @include tablet {
+                font-size: 1rem;
+                padding: 1rem 0;
+                width: 100%;
+                margin-right: 1rem;
+            }
+    
+            @include desktop {
+                padding: 2.1rem 0;
+                font-size: 1.2rem;
+            }
         }
     
-        @include desktop {
-            padding: 2.1rem 0;
-            font-size: 1.2rem;
+        
+
+        &__item-link:hover {
+            font-weight: 700;
         }
 
-    
-    }
-
-    &__item-link: hover {
-        font-weight: 700;
-    }
-
-    &__item-link--active {
-        font-weight: 500;
-        color: #fff;
-        border-bottom: 4px solid #fff;
-    }
+        &__item-link--active {
+            font-weight: 500;
+            color: #fff;
+            border-bottom: 4px solid #fff;
+        }
 
    
 }
-
-// .hero {
-//   filter: #323232(50%);
-// }
 
 
 /* Footer Section */
@@ -119,13 +110,13 @@ body {
     color: #fff;
     padding: 1.5rem;
 
-    @include tablet {
-        padding: 2rem;
-    }
+        @include tablet {
+            padding: 2rem;
+        }
 
-    @include desktop {
-        padding: 0 6.5rem;
-    }
+        @include desktop {
+            padding: 0 6.5rem;
+        }
 }
 
 .footer-container {
@@ -158,17 +149,17 @@ body {
     font-weight: 500;
     padding: 1rem 0 1rem 0;
 
-    @include tablet {
-        font-size: 2.5rem;
-        display: inline-block;
-        margin-right: 2rem;
-    }
+        @include tablet {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin-right: 2rem;
+        }
 
-  @include desktop {
-    font-size: 2.3rem;
-    display: inline-block;
-    padding-right: 2rem;
-  }
+        @include desktop {
+            font-size: 2.3rem;
+            display: inline-block;
+            padding-right: 2rem;
+        }
 }
 
 
@@ -179,16 +170,16 @@ body {
 .footer__bandsite-logo--tablet {
     display: none;
 
-    @include tablet {
-        display: inline-block;
-        font-size: 2rem;
-        font-weight: 300;
-        text-align: right;
-    }
+        @include tablet {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: right;
+        }
 
-    @include desktop {
-        font-size: 1.5rem;
-    }
+        @include desktop {
+            font-size: 1.5rem;
+        }
 }
 
 .footer-socials__container {
@@ -205,14 +196,14 @@ body {
     display: inline-block;
     margin-right: 2rem;
 
-    @include tablet {
-        height: 1.7rem;
-        margin-right: 2rem;
-    }
+        @include tablet {
+            height: 1.7rem;
+            margin-right: 2rem;
+        }
 
-    @include desktop {
-        height: 1.5rem;
-    }
+        @include desktop {
+            height: 1.5rem;
+        }
 }
 
 .footer-info__container {
@@ -248,16 +239,15 @@ body {
     font-weight: 500;
     padding-top: 1rem;
 
-    @include tablet {
-        font-size: 1rem;
-        padding-bottom: .81rem;
-    }
+        @include tablet {
+            font-size: 1rem;
+            padding-bottom: .81rem;
+        }
 
-    @include desktop {
-        font-size: .85rem;
-        padding-top: 1.5rem;
-        
-    }
+        @include desktop {
+            font-size: .85rem;
+            padding-top: 1.5rem; 
+        }
 }
 
 .footer-info__copy,
@@ -267,17 +257,14 @@ body {
     color: #fff;
     text-decoration: none;
 
-    @include tablet {
-        font-size: 1rem;
-        
-    }
+        @include tablet {
+            font-size: 1rem;
+        }
 
-    @include desktop {
-        font-size: .81rem;
-        padding: 1rem 0;
-        
-        
-    }
+        @include desktop {
+            font-size: .81rem;
+            padding: 1rem 0;
+        }
 }
 
 .footer__bandsite-logo {
@@ -285,9 +272,9 @@ body {
     font-weight: 300;
     padding-top: 5rem;
 
-    @include tablet {
-        display: none;
-    }
+        @include tablet {
+            display: none;
+        }
 }
 
 .footer-info__copyright {
@@ -295,16 +282,15 @@ body {
     font-weight: 200;
     padding-top: 1rem;
 
-    @include tablet {
-        font-size: 1rem;
-        padding-left: 1rem;
-    }
+        @include tablet {
+            font-size: 1rem;
+            padding-left: 1rem;
+        }
 
-    @include desktop {
-        font-size: .81rem;
-        padding: 2rem 0; 
-    
-    }
+        @include desktop {
+            font-size: .81rem;
+            padding: 2rem 0; 
+        }
 }
 
 
