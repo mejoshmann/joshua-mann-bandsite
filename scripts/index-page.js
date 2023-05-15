@@ -32,8 +32,7 @@ const fetchComments = () => {
                         commentName.textContent = comment.name;
 
                         const date = document.createElement("p");
-                        date.classList.add("comments__date");
-                        date.textContent = new Date(comment.timestamp).toLocaleDateString('ca');
+                        date.textContent = new Date(comment.timestamp).toLocaleDateString('fr-FR');
 
                         const commentText = document.createElement("p");
                         commentText.classList.add("comments__comment");
