@@ -98,6 +98,12 @@ iframe {
         padding: 4rem 6rem;
     }
 
+    &__container-lg {
+        @include desktop {
+           
+        }
+    }
+
 
     &__heading {
         padding: 1rem 0 1.5rem 1rem;
@@ -110,6 +116,7 @@ iframe {
             font-size: 3.5rem;
             display: inline;
             width: 13rem;
+           
         }
         
     }
@@ -127,21 +134,11 @@ iframe {
         }
     }
 
-  
-    // &__container-hidden {
-    //     @include desktop {
-           
-    //     }
-    // }
-
 
 
     &__container {
         border-bottom: 1px solid #e1e1e1;
         padding: 1rem;
-
-
-        
 
         @include tablet {
             display: flex;
